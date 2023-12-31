@@ -1,0 +1,150 @@
+# Restart sxhkd
+alt + Escape
+	pkill -USR1 -x sxhkd
+
+# Reload i3wm Configuration File
+alt + shift + c
+	i3-msg reload
+
+# Restart i3wm
+alt + shift + r
+	i3-msg restart
+
+# Exit i3wm
+alt + shift + e
+	i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+
+
+# Programs
+
+
+## Terminal
+alt + Return
+	alacritty
+
+## Dynamic Menu 
+alt + d
+	dmenu_run
+
+## Browser
+alt + b
+	librewolf
+
+
+alt + q
+	i3-msg kill
+
+
+# Workspace Movement
+
+
+alt + {1-9}
+	i3-msg workspace {1-9}
+
+super + {1-9}
+	i3-msg workspace {10,11,12,13,14,15,16,17,18}
+
+alt + shift + {1-9}
+        i3-msg move container to workspace number {1-9}
+
+super + shift + {1-9}
+        i3-msg move container to workspace number {10,11,12,13,14,15,16,17,18}
+
+alt + f
+	i3-msg fullscreen toggle
+
+
+# Focus Movement
+
+
+## Change Focus
+alt + {h,Left}
+	i3-msg focus left
+
+alt + {j,Down}
+	i3-msg focus down
+
+alt + {k,Up}
+	i3-msg focus up
+
+alt + {l,Right}
+	i3-msg focus right
+
+## Move focused window
+alt + shift + {h,Left}
+	i3-msg move left
+
+alt + shift + {j,Down}
+	i3-msg move down
+
+alt + shift + {k,Up}
+	i3-msg move up
+
+alt + shift + {l,Right}
+	i3-msg move right
+
+
+# Container Movement
+
+
+## Change Container Layout
+alt + s
+	i3-msg layout stacking
+
+alt + w
+	i3-msg layout tabbed
+
+alt + e
+	i3-msg layout toggle split
+
+## Toggle Tiling / Floating
+alt + shift + space
+	i3-msg floating toggle
+
+## Change Focus Between Tiling / Floating Windows
+alt + space
+	i3-msg focus mode_toggle
+
+## Focus the Parent Container
+alt + a
+	i3-msg focus parent
+
+## Focus the Child Container
+#alt + d
+#	i3-msg focus child
+
+
+# Resize Mode
+
+
+alt + r
+	i3-msg mode "resize"
+
+
+# Tmux Config
+
+
+alt + {backslash,bar}
+	i3-msg split horizontal
+
+alt + {apostrophe,quotedbl,minus}
+	i3-msg split vertical
+
+
+# Volume Control
+
+
+## Raise Volume
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +10% && killall -SIGUSR1 i3status
+
+## Lower Volume
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -10% && killall -SIGUSR1 i3status
+
+## Mute Volume
+XF86AudioMute
+	pactl set-sink-volume @DEFAULT_SINK@ -10% && killall -SIGUSR1 i3status
+
+## Microphone Mute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status

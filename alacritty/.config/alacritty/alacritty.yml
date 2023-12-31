@@ -1,0 +1,34 @@
+window:
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+  opacity: 0.8
+
+font:
+  size: 10.0
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: FiraCode Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: FiraCode Nerd Font Mono
+    style: Italic
+
+  bold_italic:
+    family: FiraCode Nerd Font Mono
+    style: Bold Italic
+  
+  offset:
+      x: 1
+      y: 1
