@@ -1,4 +1,5 @@
-include $HOME/.config/i3/workspaces.conf
+# Uncomment this line for dual monitor setup
+#include $HOME/.config/i3/workspaces.conf
 include $HOME/.config/i3/theme.conf
 
 set $mod Mod1

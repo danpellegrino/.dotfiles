@@ -41,14 +41,16 @@ alt + q
 alt + {1-9}
 	i3-msg workspace {1-9}
 
-super + {1-9}
-	i3-msg workspace {10,11,12,13,14,15,16,17,18}
+# Uncomment the following lines to enable workspaces 10-18
+#super + {1-9}
+#	i3-msg workspace {10,11,12,13,14,15,16,17,18}
 
 alt + shift + {1-9}
         i3-msg move container to workspace number {1-9}
 
-super + shift + {1-9}
-        i3-msg move container to workspace number {10,11,12,13,14,15,16,17,18}
+# Uncomment the following lines to enable workspaces 10-18
+#super + shift + {1-9}
+#        i3-msg move container to workspace number {10,11,12,13,14,15,16,17,18}
 
 alt + f
 	i3-msg fullscreen toggle
