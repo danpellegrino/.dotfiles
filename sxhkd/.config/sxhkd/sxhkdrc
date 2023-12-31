@@ -150,3 +150,15 @@ XF86AudioMute
 
 ## Microphone Mute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
+
+
+# Brightness Control
+
+
+## Increase Brightness
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+## Decrease Brightness
+XF86MonBrightnessDown
+  xbacklight -dec 10
