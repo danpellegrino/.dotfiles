@@ -3,7 +3,7 @@
 # install.sh
  # Author: Daniel Pellegrino
  # Date Created: 12/31/2023
- # Last Modified: 12/31/2023
+ # Last Modified: 1/1/2024
  # Description: Installs the dotfiles in this repo.
 
 # Usage: sudo ./install.sh <user>
