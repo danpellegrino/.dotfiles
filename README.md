@@ -1,6 +1,56 @@
-# .dotfiles
+# Dotfiles
 
 This repository contains my personal dotfiles configuration.
+
+## Requirements
+
+Before installing these dotfiles, ensure you have the following prerequisite installed:
+
+- **GNU Stow:** Stow is a symlink farm manager which will be used to manage the symlinks for these dotfiles.
+  - Installation instructions: [GNU Stow Installation](https://www.gnu.org/software/stow/)
+
+### Installing GNU Stow
+
+Below are instructions for installing `GNU Stow` on different Linux distributions:
+
+#### Debian/Ubuntu
+
+```bash
+sudo apt update
+sudo apt install stow
+```
+
+#### Red Hat based (RHEL, CentOS, Fedora)
+
+```bash
+sudo yum install stow      # For RHEL and CentOS
+# OR
+sudo dnf install stow      # For Fedora
+```
+
+#### Arch Linux
+
+```bash
+sudo pacman -S stow
+```
+
+#### openSUSE
+
+```bash
+sudo zypper install stow
+```
+
+#### Void Linux
+
+```bash
+sudo xbps-install -S stow
+```
+
+#### Alpine Linux
+
+```bash
+sudo apk add stow
+```
 
 ## Installation
 
