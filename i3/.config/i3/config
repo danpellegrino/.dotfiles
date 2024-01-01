@@ -1,4 +1,4 @@
-# Uncomment this line for dual monitor setup
+# Uncomment the line below for dual monitor setup
 #include $HOME/.config/i3/workspaces.conf
 include $HOME/.config/i3/theme.conf
 
