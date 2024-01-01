@@ -24,7 +24,7 @@ alt + Return
 
 ## Dynamic Menu 
 alt + d
-	dmenu_run
+	i3-dmenu-desktop
 
 ## Browser
 alt + b
