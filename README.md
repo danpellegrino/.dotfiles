@@ -61,7 +61,7 @@ To install these dotfiles, follow these steps:
     ```bash
     git clone https://github.com/danpellegrino/.dotfiles.git
     # OR
-    git clone --recurse-submodules https://github.com/danpellegrino/.dotfiles.git      # To install submodules (nvim,personal)
+    git clone --recurse-submodules https://github.com/danpellegrino/.dotfiles.git      # To clone submodules (nvim,personal)
     ```
 
 2. **Navigate to the dotfiles directory:**
