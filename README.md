@@ -72,6 +72,7 @@ To install these dotfiles, follow these steps:
 3. **Run the install script:**
 
     ```bash
+    chmod +x install.sh
     sudo ./install.sh <user>
     ```
 
