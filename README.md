@@ -25,9 +25,6 @@ To install these dotfiles, follow these steps:
     sudo ./install.sh <user>
     ```
 
-
-4. **Follow any prompts or instructions during the installation process.**
-
 ## What's Included
 
 - `alacritty`: Configuration files for Alacritty terminal emulator.
