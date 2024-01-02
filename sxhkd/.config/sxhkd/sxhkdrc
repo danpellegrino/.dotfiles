@@ -30,6 +30,10 @@ alt + d
 alt + b
 	librewolf
 
+## Screenshots
+Print
+  flameshot gui
+
 
 alt + q
 	i3-msg kill
