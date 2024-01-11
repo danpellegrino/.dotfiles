@@ -83,6 +83,7 @@ To install these dotfiles, follow these steps:
 - `bin`: Custom scripts or executables.
 - `i3`: Configuration files for the i3 window manager.
 - `nvim`: Configuration files for Neovim text editor.
+- `ohmyzsh`: Submodule for [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh), Links to ~/.oh-my-zsh/.
 - `personal`: Personal configurations or miscellaneous files.
 - `picom`: Configuration for picom, a compositor for X11.
 - `sxhkd`: Configuration files for sxhkd, a X hotkey daemon.
