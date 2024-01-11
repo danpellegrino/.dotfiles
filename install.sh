@@ -3,7 +3,7 @@
 # install.sh
  # Author: Daniel Pellegrino
  # Date Created: 12/31/2023
- # Last Modified: 1/1/2024
+ # Last Modified: 1/11/2024
  # Description: Installs the dotfiles in this repo.
 
 # Usage: sudo ./install.sh <user>
@@ -50,9 +50,21 @@ main ()
     exit 1
   fi
 
+  # Remember the current directory
+  CURRENT_DIR=$(pwd)
+
+  # Find the directory of the script
+  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+  # Change to the directory of the script
+  cd "$SCRIPT_DIR"
+
   stow_dotfiles
 
   xorgrules
+
+  # Change back to the original directory
+  cd "$CURRENT_DIR"
 }
 
 # Functions
