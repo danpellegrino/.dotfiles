@@ -49,6 +49,14 @@ main ()
     echo "Stow is not installed. Please install it."
     exit 1
   fi
+  if ! command -v git &> /dev/null; then
+    echo "Git is not installed. Please install it."
+    exit 1
+  fi
+  if ! command -v tmux &> /dev/null; then
+    echo "Tmux is not installed. Please install it."
+    exit 1
+  fi
 
   # Remember the current directory
   CURRENT_DIR=$(pwd)
@@ -95,6 +103,15 @@ stow_dotfiles ()
   for folder in "${folders[@]}"; do
     echo "Installing $folder."
     sudo -u "$NORMAL_USER" stow --no-folding -vt "$NORMAL_USER_HOME" "$folder"
+    # Install the tmux plugins
+    if [ $folder == "tmux" ]; then
+      sudo -u "$NORMAL_USER" tmux source-file "$NORMAL_USER_HOME/.tmux.conf"
+      if [ ! -d "$NORMAL_USER_HOME/.tmux/plugins/tpm" ]; then
+        echo "Installing tmux plugin manager."
+        sudo -u "$NORMAL_USER" git clone https://github.com/tmux-plugins/tpm "$NORMAL_USER_HOME/.tmux/plugins/tpm"
+      fi
+      sudo -u "$NORMAL_USER" $NORMAL_USER_HOME/.tmux/plugins/tpm/bin/install_plugins
+    fi
   done
 }
 
