@@ -133,7 +133,24 @@ xorgrules ()
   fi
 
   # Copy the xorg.conf.d folder to the xorg.conf.d folder
-  cp -rv "$XCONF_DOTFILES"* "$XCONF_FOLDER"
+
+  # Check if the intel.conf should be copied over
+  # Only if /sys/class/backlight/intel_backlight exists
+  if [ -d /sys/class/backlight/intel_backlight ]; then
+    echo "Copying the 20-intel.conf file to the xorg.conf.d folder."
+    cp -rv "$XCONF_DOTFILES"20-intel.conf "$XCONF_FOLDER"
+  else
+    echo "The intel_backlight folder does not exist. Skipping the 20-intel.conf file."
+  fi
+
+  # Check if a touchpad is installed
+  # Only if /proc/bus/input/devices contains a touchpad
+  if grep -q "Touchpad" /proc/bus/input/devices; then
+    echo "Copying the 40-libinput.conf file to the xorg.conf.d folder."
+    cp -rv "$XCONF_DOTFILES"40-libinput.conf "$XCONF_FOLDER"
+  else
+    echo "The touchpad does not exist. Skipping the 40-libinput.conf file."
+  fi
 }
 
 # Main
